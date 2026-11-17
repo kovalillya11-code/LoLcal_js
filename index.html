@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1–10</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <section>
+        <h2>1. Ім'я гравця</h2>
+        <input id="nameInput" placeholder="Ваше ім'я">
+        <button id="helloBtn">Привіт</button>
+        <p id="greeting"></p>
+    </section>
+
+    <section>
+        <h2>2. Секретний пароль</h2>
+        <input id="secretInput" placeholder="Слово">
+        <button id="saveSecretBtn">Зберегти секрет</button>
+        <p id="secretMsg"></p>
+    </section>
+
+    <section>
+        <h2>3. Монетки</h2>
+        <button id="coinBtn">Зібрати монетку</button>
+        <p id="coinsText"></p>
+    </section>
+
+    <section>
+        <h2>4. Вибір персонажа</h2>
+        <button class="hero" data-hero="🧙">🧙 Маг</button>
+        <button class="hero" data-hero="🥷">🥷 Ніндзя</button>
+        <button class="hero" data-hero="🤖">🤖 Робот</button>
+        <p id="heroText"></p>
+    </section>
+
+    <section>
+        <h2>5. Колір фону</h2>
+        <button class="color" data-color="#e83c3c">Червона</button>
+        <button class="color" data-color="#5dfc75">Зелена</button>
+        <button class="color" data-color="#629bf0">Синя</button>
+    </section>
+
+    <section>
+        <h2>6. Записка на холодильник</h2>
+        <textarea id="note" rows="4" cols="40"></textarea><br>
+        <button id="attachBtn">Прикріпити</button>
+        <button id="clearNoteBtn">Очистити</button>
+    </section>
+
+    <section>
+        <h2>7. Анкета гравця</h2>
+        <p id="profile"></p>
+        <button id="levelUpBtn">Підвищити рівень</button>
+    </section>
+
+    <section>
+        <h2>8. Інвентар</h2>
+        <button class="item" data-item="Меч">Знайти меч ⚔️</button>
+        <button class="item" data-item="Щит">Знайти щит 🛡️</button>
+        <button class="item" data-item="Зілля">Знайти зілля 🧪</button>
+        <ul id="inventory"></ul>
+    </section>
+
+    <section>
+        <h2>9. Спіймай вдалий клік</h2>
+        <p>Найменше спроб: <b id="bestClick">-</b></p>
+        <div id="numButtons"></div>
+        <p id="clickMsg"></p>
+    </section>
+
+    <section>
+        <h2>10. Гаряче — Холодно</h2>
+        <p>Найкращий результат: <b id="bestScore">-</b></p>
+
+        <div>
+            <select id="level">
+                <option value="easy">Легкий (1–50)</option>
+                <option value="medium">Середній (1–100)</option>
+                <option value="hard">Важкий (1–500)</option>
+                <option value="death">Смерть (1–5000)</option>
+            </select>
+            <button id="newGameBtn">Нова гра</button>
+        </div>
+
+        <p id="attemptsLeft"></p>
+
+        <p id="rangeText"></p>
+        <input id="guessInput" type="number" min="1">
+        <button id="guessBtn">Перевірити</button>
+
+        <p id="hotMsg"></p>
+    </section>
+
+    <section>
+        <h2>11. Камінь, ножиці, папір</h2>
+        <button class="rps" data-choice="rock">🗻 Камінь</button>
+        <button class="rps" data-choice="scissors">✂ Ножиці</button>
+        <button class="rps" data-choice="paper">📄 Папір</button>
+        <p id="rpsResult"></p>
+        <p>Ви: <b id="rpsPlayer">-</b> | Комп'ютер: <b id="rpsComputer">-</b></p>
+        <p> ^_^ Перемоги: <b id="rpsWins">0</b> · ˘︹˘ Поразки: <b id="rpsLosses">0</b> · ¬_¬ Нічиї: <b
+                id="rpsDraws">0</b></p>
+    </section>
+
+    <section>
+        <h2>Улюблений фільм або гра</h2>
+        <input id="favInput" placeholder="Назва">
+        <button id="favSave">Зберегти</button>
+        <p id="favResult"></p>
+    </section>
+
+    <section>
+        <h2>Лічильник енергії</h2>
+        <p>Енергія: <span id="energyValue">100</span></p>
+        <button id="energySpend">Витратити 10 енергії</button>
+        <button id="energyRestore">Відновити</button>
+    </section>
+
+    <section>
+        <h2>Магазин скінів</h2>
+        <p>Монети: <span id="shopCoins"></span></p>
+        <p>Скін: <span id="shopSkin"></span></p>
+        <button id="buySkin">Купити Золотий скін (30 монет)</button>
+    </section>
+
+    <section>
+        <h2>Список невдалих спроб</h2>
+        <input id="wrongInput" placeholder="Слово">
+        <button id="wrongBtn">Вгадати</button>
+        <p id="wrongMsg"></p>
+        <ul id="wrongList"></ul>
+    </section>
+
+    <section>
+        <h2>Вгадай число від 1 до 20</h2>
+        <input id="rangeInput" type="number" min="1" max="20" placeholder="1–20">
+        <button id="rangeGuess">Перевірити</button>
+        <button id="rangeNew">Нова гра</button>
+        <p id="rangeMsg"></p>
+        <p>Спроб: <span id="rangeAttempts">0</span></p>
+        <p>Рекорд: <b id="rangeRecord">-</b></p>
+    </section>
+
+    <script src="/js/dj.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
